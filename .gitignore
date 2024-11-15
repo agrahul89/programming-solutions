@@ -1,0 +1,11 @@
+# git files
+.git
+
+#eclipse
+.DS_Store
+.classpath
+.project
+.metadata
+.settings
+.sonarlint
+target
