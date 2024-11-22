@@ -1,4 +1,4 @@
-package com.github.agrahul89.algorithms.leetcode.arrays;
+package com.github.agrahul89.algorithms.leetcode.strings;
 
 /**
  * https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string

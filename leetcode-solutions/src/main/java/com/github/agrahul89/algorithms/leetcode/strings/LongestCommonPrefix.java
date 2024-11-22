@@ -1,4 +1,4 @@
-package com.github.agrahul89.algorithms.leetcode.arrays;
+package com.github.agrahul89.algorithms.leetcode.strings;
 
 import java.util.Arrays;
 

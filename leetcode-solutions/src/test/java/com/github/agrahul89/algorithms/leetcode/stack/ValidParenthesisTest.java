@@ -1,4 +1,4 @@
-package com.github.agrahul89.algorithms.stack;
+package com.github.agrahul89.algorithms.leetcode.stack;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

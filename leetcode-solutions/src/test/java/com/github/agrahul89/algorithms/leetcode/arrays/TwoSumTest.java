@@ -1,4 +1,4 @@
-package com.github.agrahul89.algorithms.arrays;
+package com.github.agrahul89.algorithms.leetcode.arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
