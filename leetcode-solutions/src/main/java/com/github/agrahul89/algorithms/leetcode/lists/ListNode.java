@@ -1,4 +1,4 @@
-package com.github.agrahul89.algorithms.leetcode.linkedlist;
+package com.github.agrahul89.algorithms.leetcode.lists;
 
 public class ListNode {
   int val;

@@ -1,8 +1,11 @@
-package com.github.agrahul89.algorithms.leetcode.linkedlist;
+package com.github.agrahul89.algorithms.leetcode.lists;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+
+import com.github.agrahul89.algorithms.leetcode.lists.ListNode;
+import com.github.agrahul89.algorithms.leetcode.lists.MergeTwoSortedList;
 
 class MergeTwoSortedListTest {
 
