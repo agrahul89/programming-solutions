@@ -18,7 +18,7 @@ class RemoveDuplicatesTest {
       1,3,5,5,7,8,9,9,9 -> 1,3,5,7,8,9
       """)
   void testDeleteDuplicates(String test, String expected) {
-    assertThat(remove.deleteDuplicates(new ListNode(test, ",")).toString()).isEqualTo(expected);
+    assertThat(remove.deleteDuplicates(new ListNode(test, ","))).hasToString(expected);
   }
 
   @ParameterizedTest
@@ -30,7 +30,7 @@ class RemoveDuplicatesTest {
       1,3,5,5,7,8,9,9,9 -> 1,3,5,7,8,9
       """)
   void testDeleteDuplicatesRecursively(String test, String expected) {
-    assertThat(remove.deleteDuplicatesRecursively(new ListNode(test, ",")).toString()).isEqualTo(expected);
+    assertThat(remove.deleteDuplicatesRecursively(new ListNode(test, ","))).hasToString(expected);
   }
 
 }
