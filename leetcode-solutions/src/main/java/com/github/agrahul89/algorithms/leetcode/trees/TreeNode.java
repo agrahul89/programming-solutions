@@ -1,5 +1,7 @@
 package com.github.agrahul89.algorithms.leetcode.trees;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TreeNode {
@@ -24,6 +26,46 @@ public class TreeNode {
       root.addChildren(scan, root);
       return root;
     }
+  }
+
+  public List<Integer> leftView() {
+    List<Integer> elements = new ArrayList<>();
+    leftView(this, 0, elements);
+    return elements;
+  }
+
+  private void leftView(TreeNode node, int level, List<Integer> elements) {
+    if (node == null)
+      return;
+    try {
+      elements.set(level, node.val);
+    } catch (IndexOutOfBoundsException ex) {
+      elements.add(node.val);
+    }
+    leftView(node.left, level + 1, elements);
+    leftView(node.right, level + 1, elements);
+  }
+
+  public List<Integer> rightView() {
+    List<Integer> elements = new ArrayList<>();
+    rightView(this, 0, elements);
+    return elements;
+  }
+
+  private void rightView(TreeNode node, int level, List<Integer> elements) {
+    if (node == null)
+      return;
+    try {
+      elements.set(level, node.val);
+    } catch (IndexOutOfBoundsException ex) {
+      elements.add(node.val);
+    }
+    leftView(node.left, level + 1, elements);
+    leftView(node.right, level + 1, elements);
+  }
+
+  public static void main(String[] args) {
+    System.out.println(createTree().rightView());
   }
 
   public StringBuilder stringify(StringBuilder prefix, boolean isTail, StringBuilder sb) {
