@@ -1,8 +1,10 @@
 package com.github.agrahul89.algorithms.leetcode.trees;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class TreeNode {
   int val;
@@ -11,6 +13,24 @@ public class TreeNode {
 
   TreeNode(int val) {
     this.val = val;
+  }
+
+  public List<Integer> bottomView() {
+    TreeMap<Integer, Integer> elements = new TreeMap<>(Comparator.naturalOrder());
+    elements.put(0, this.val);
+    bottomView(left, -1, elements);
+    bottomView(right, 1, elements);
+    return elements.sequencedValues().stream().toList();
+  }
+
+  private void bottomView(TreeNode node, int level, TreeMap<Integer, Integer> elements) {
+    if (node == null)
+      return;
+
+    elements.put(level, node.val);
+
+    bottomView(node.left, level - 1, elements);
+    bottomView(node.right, level + 1, elements);
   }
 
   public static TreeNode createTree() {
@@ -64,10 +84,6 @@ public class TreeNode {
     leftView(node.right, level + 1, elements);
   }
 
-  public static void main(String[] args) {
-    System.out.println(createTree().rightView());
-  }
-
   public StringBuilder stringify(StringBuilder prefix, boolean isTail, StringBuilder sb) {
     if (right != null) {
       right.stringify(new StringBuilder().append(prefix).append(isTail ? "│   " : "    "), false, sb);
@@ -77,6 +93,24 @@ public class TreeNode {
       left.stringify(new StringBuilder().append(prefix).append(isTail ? "    " : "│   "), true, sb);
     }
     return sb;
+  }
+
+  public List<Integer> topView() {
+    TreeMap<Integer, Integer> elements = new TreeMap<>(Comparator.naturalOrder());
+    elements.put(0, this.val);
+    topView(left, -1, elements);
+    topView(right, 1, elements);
+    return elements.sequencedValues().stream().toList();
+  }
+
+  private void topView(TreeNode node, int level, TreeMap<Integer, Integer> elements) {
+    if (node == null)
+      return;
+
+    elements.putIfAbsent(level, node.val);
+
+    topView(node.left, level - 1, elements);
+    topView(node.right, level + 1, elements);
   }
 
   @Override
